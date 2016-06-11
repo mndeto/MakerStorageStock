@@ -16,7 +16,7 @@
                         <thead>
                             <tr>
                                 <td>Id</td>
-                                <td>SKU</td>
+                               
                                 <td>Name</td>
                                 <td>Description</td>
                                 <td>Link</td>
@@ -28,7 +28,7 @@
                         @foreach ($products as $product)
                             <tr>
                                 <td>{{ $product->id }}</td>
-                                <td>{{ $product->urunSku }}</td>
+                               
                                 <td>{{ $product->name }}</td>
                                 <td>{{ $product->description }}</td>
                                 <td>{{ $product->ink }}</td>

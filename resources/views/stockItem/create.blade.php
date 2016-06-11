@@ -10,10 +10,7 @@
                 <div class="panel-body">
                     {!! Form::open(['url'=>'stockItems']) !!}
                     
-                        <div class="form-group">
-                           {!! Form::label('SKU') !!}
-                           {!! Form::text('sku', null, array('required', 'class'=>'form-control')) !!}
-                        </div>
+                      
                         <div class="form-group">
                            {!! Form::label('Name') !!}
                            {!! Form::text('name', null, array('required', 'class'=>'form-control')) !!}

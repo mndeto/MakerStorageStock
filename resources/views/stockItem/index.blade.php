@@ -16,7 +16,7 @@
                         <thead>
                             <tr>
                                 <td>Id</td>
-                                <td>SKU</td>
+                              
                                 <td>Name</td>
                                 <td>Description</td>
                                 <td>Order Info</td>
@@ -29,7 +29,7 @@
                         @foreach ($stockItems as $stockItem)
                             <tr>
                                 <td>{{ $stockItem->id }}</td>
-                                <td>{{ $stockItem->sku }}</td>
+                               
                                 <td>{{ $stockItem->name }}</td>
                                 <td>{{ $stockItem->description }}</td>
                                 <td>{{ $stockItem->orderInfo }}</td>

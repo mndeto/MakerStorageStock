@@ -55,7 +55,7 @@ class stockItemController extends Controller
       
             // store
             $stockItem = new StockItem;
-            $stockItem->sku = Request::get('sku');
+        
             $stockItem->name = Request::get('name');
             $stockItem->description = Request::get('description');
             $stockItem->orderInfo = Request::get('orderInfo');

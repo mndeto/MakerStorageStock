@@ -12,7 +12,7 @@
                             <h2>{{ $product->name }}</h2>
                             <p>
                                 <strong>Id:</strong> {{ $product->id }}<br>
-                                <strong>Product SKU:</strong> {{ $product->urunSku }}<br>
+                               
                                 <strong>Description:</strong> {{ $product->description }}<br>
                                 <strong>Link:</strong> {{ $product->link }}<br>
                                  <strong>Price:</strong> {{ $product->price }}<br>
@@ -23,7 +23,7 @@
                                 <thead>
                                     <tr>
                                         <td>Id</td>
-                                        <td>SKU</td>
+                                       
                                         <td>Name</td>
                                         <td>Description</td>
                                         <td>Order Info</td>
@@ -36,7 +36,7 @@
                                 @foreach ($stockItems as $stockItem)
                                     <tr>
                                         <td>{{ $stockItem->id }}</td>
-                                        <td>{{ $stockItem->sku }}</td>
+                                     
                                         <td>{{ $stockItem->name }}</td>
                                         <td>{{ $stockItem->description }}</td>
                                         <td>{{ $stockItem->orderInfo }}</td>

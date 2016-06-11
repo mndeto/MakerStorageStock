@@ -28,6 +28,9 @@ Route::get('/stockItems', 'stockItemController@index');
 Route::post('/stockItems', 'stockItemController@store');
 
 
+Route::get('/products', 'productController@index');
+Route::get('/products/{id}', 'productController@show');
+
 
 //Route::resource('stockItem', 'stockItemController');
 

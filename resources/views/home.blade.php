@@ -9,6 +9,8 @@
 
                 <div class="panel-body">
                 <ul>
+                   <li> <a href="products">Products</a></li>
+                   <hr>
                    <li> <a href="stockItems">Stock Items</a></li>
                    <li> <a href="stockItemCreate">Create New Stock Item</a></li>
                 </ul>        

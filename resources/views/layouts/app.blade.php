@@ -40,7 +40,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    MakerStorage Stock Management
+                    MakerStorage Stock
                 </a>
             </div>
 

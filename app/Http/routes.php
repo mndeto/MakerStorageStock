@@ -23,13 +23,17 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/stockItemCreate', 'stockItemController@create');
+Route::get('/stockItems/create', 'stockItemController@create');
 Route::get('/stockItems', 'stockItemController@index');
 Route::post('/stockItems', 'stockItemController@store');
-
+Route::get('/stockItems/{id}/buy', 'stockItemController@buy');
+Route::post('/stockItems/{id}/bought', 'stockItemController@bought');
+Route::get('/stockItems/critical', 'stockItemController@critical');
 
 Route::get('/products', 'productController@index');
 Route::get('/products/{id}', 'productController@show');
+
+Route::get('/buysell', 'buysellController@index');
 
 
 //Route::resource('stockItem', 'stockItemController');

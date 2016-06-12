@@ -23,7 +23,7 @@
                                 <thead>
                                     <tr>
                                         <td>Id</td>
-                                       
+                                        <td>Part Number</td>
                                         <td>Name</td>
                                         <td>Description</td>
                                         <td>Order Info</td>
@@ -36,7 +36,7 @@
                                 @foreach ($stockItems as $stockItem)
                                     <tr>
                                         <td>{{ $stockItem->id }}</td>
-                                     
+                                        <td><a href="https://octopart.com/search?q={{ $stockItem->partNumber }}" target="_blank">{{ $stockItem->partNumber }}</a></td>
                                         <td>{{ $stockItem->name }}</td>
                                         <td>{{ $stockItem->description }}</td>
                                         <td>{{ $stockItem->orderInfo }}</td>

@@ -16,7 +16,7 @@ class CreateStockItemTable extends Migration
             $table->increments('id');
             
             //$table->string('sku')->unique()->index();
-           
+            $table->string('partNumber');
             $table->string('name');
             $table->string('description');
             $table->string('orderInfo');

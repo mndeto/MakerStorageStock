@@ -7,6 +7,9 @@ namespace App\Http\Controllers;
 use Request;
 
 use App\StockItem;
+use App\BuySell;
+use Carbon\Carbon;
+
 
 class stockItemController extends Controller
 {
@@ -18,7 +21,17 @@ class stockItemController extends Controller
     public function index()
     {
         
-        $stockItems = StockItem::all();
+        $search = \Request::get('search'); //<-- we use global request to get the param of URI
+        //return $search;
+        
+      
+        
+        
+        
+        
+        $stockItems = StockItem::where('name','like','%'.$search.'%')
+       //->orderBy('name')
+        ->paginate(20);
         
         //return $stockItems;
         
@@ -84,6 +97,36 @@ class stockItemController extends Controller
     {
         //
     }
+    
+    public function buy($id)
+    {
+        //return $id;
+        $stockItem = StockItem::find($id);
+        return view ('stockItem.buy')->with('stockItem', $stockItem);
+        
+    }
+    
+    public function bought(Request $request, $id)
+    {
+       //return Request::all();
+       //return $id;
+        $stockItem = StockItem::find($id);
+        $stockItem->inHand = $stockItem->inHand + Request::get('quantity');
+        $stockItem->update();
+        
+        //buysell tablosuna alimi yaziyoruz
+        $buysell = new BuySell;
+        $buysell->name =$stockItem->name;
+        $buysell->quantity = Request::get('quantity');
+        $buysell->price =  Request::get('unitPrice');
+        $buysell->total = Request::get('quantity') * Request::get('unitPrice');    
+        $buysell->bought_at = Carbon::today();   
+        $buysell->save();
+        
+         \Session::flash('flash_message','successfully saved.');
+            return redirect('buysell');
+        
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -94,6 +137,18 @@ class stockItemController extends Controller
     public function edit($id)
     {
         //
+    }
+    
+    public function critical()
+    {
+        //
+         //return $id;
+        //$stockItem = StockItem::where(StockItem::inHand < StockItem::low)->get();
+        $stockItems = \DB::table('stockItems')
+                ->where('inHand', '<', 'low')
+                ->get();
+       
+        return view ('stockItem.critical')->with('stockItems', $stockItems);
     }
 
     /**

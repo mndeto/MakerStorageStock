@@ -12,7 +12,11 @@
                    <li> <a href="products">Products</a></li>
                    <hr>
                    <li> <a href="stockItems">Stock Items</a></li>
-                   <li> <a href="stockItemCreate">Create New Stock Item</a></li>
+                   
+                   <li> <a href="stockItems/critical">Critical Stock Items</a></li>
+                   
+                   <hr>
+                   <li> <a href="buysell">Buy Sell Records</a></li>
                 </ul>        
                 </div>
             </div>

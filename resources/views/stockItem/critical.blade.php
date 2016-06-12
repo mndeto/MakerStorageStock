@@ -5,16 +5,12 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Stock Items</div>
-                
-                
+                <div class="panel-heading">Critical Stock Items</div>
                     @if(Session::has('flash_message'))
                         <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
                     @endif
-                    
-                    
                 <div class="panel-body">
-                    @include('search',['url'=>'stockItems','link'=>'stockItems'])
+                    
                     
                     <table class="table table-striped table-bordered">
                         <thead>
@@ -61,7 +57,7 @@
                     </table>
                     
                     
-                    {{ $stockItems->links() }}
+                    
                     
                 
                 </div>
